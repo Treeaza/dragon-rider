@@ -129,7 +129,7 @@ fn create_fractal_lines_chamfered(current_step: &Vec<vectors::TurnDirection>) ->
 }
 
 fn main() {
-    let l = fractal_n_step(18);
+    let l = fractal_n_step(16);
 
     let (points, min_x, min_y, max_x, max_y) = create_fractal_lines_chamfered(&l);
     let mut line = LineBuilder::new((points[0].x - min_x) as f32, (points[0].y - min_y) as f32);
@@ -144,3 +144,4 @@ fn main() {
 
     render::save(&canvas, &format!("dragon_f.svg"), SvgRenderer::new()).expect("Failed to save");
 }
+
